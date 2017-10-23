@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width" />
+	<title>UTS APAP 2017</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">UTS Arsitektur dan Pemrograman Aplikasi Perusahaan</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-9">
+				<h1 class="page-header">Produk Baru</h1>
+				<p>Keterangan isian bertanda * harus diisi</p>
+				
+				<!--<form action="/product/add/submit" method="post">
+					<div>
+						<label for="nama">Nama Produk</label> <input type="text" name="nama" />
+					</div>
+					<div>
+						<label for="deskripsi">Deskripsi Produk</label> <input type="text" name="deskripsi" />
+					</div>
+					<div>
+						<label for="kategori">Kategori Produk</label> <input type="text" name="kategori" />
+					</div>
+					<div>
+						<label for="pabrikan">Pabrikan</label> <input type="text" name="pabrikan" />
+					</div>
+					<div>
+						<label for="berat">Berat Produk</label> <input type="text" name="berat" />
+					</div>
+					<div>
+						<label for="harga">Harga Produk</label> <input type="text" name="harga" />
+					</div>
+					<div>
+						<label for="tahun_produksi">Tahun Produksi</label> <input type="text" name="tahun_produksi" />
+					</div>
+					<div>
+						<label for="jumlah_stok">Jumlah Stok Tersedia</label> <input type="text" name="jumlah_stok" />
+					</div>
+					<div>
+						<label for="kondisi">Kondisi Produk</label> <input type="text" name="kondisi" />
+					</div>
+			
+					<div>
+						<button class="btn btn-primary" type="submit" name="action" value="save">Save</button>
+					</div>
+				</form>-->
+				
+				<form action="/product/add/submit" method="post"
+					th:object="${product}">
+					<table>
+						<tbody>
+							<tr>
+								<td class="col-sm-2"><label for="id">ID Produk*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="hidden" name="id" value=0 /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="nama">Nama Produk*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="nama" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="deskripsi">Deskripsi Produk*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="deskripsi" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="kategori">Kategori Produk*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="kategori" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="pabrikan">Pabrikan*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="pabrikan" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="berat">Berat*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="berat" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="harga">Harga*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="harga" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="tahun_produksi">Tahun Produksi*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="tahun_produksi"/></td>
+							</tr>
+								<tr>
+								<td class="col-sm-2"><label for="jumlah_stok">Jumlah Stok Tersedia*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="jumlah_stok" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="kondisi">Kondisi Produk*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="text" name="kondisi" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"></td>
+								<td class="col-sm-4"><button class="btn btn-success"
+										type="submit" name="action" value="save" style="margin-top:10px">Save</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+</body>
+
+</html>
+

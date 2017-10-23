@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width" />
+	<title>UTS APAP 2017</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#result').DataTable();
+		});
+	</script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">UTS Arsitektur dan Pemrograman Aplikasi Perusahaan</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<h1>Daftar Produk</h1>
+				<table id="result" class="table table-bordered"
+					style="margin-top: 30px; text-align:center; width:100%">
+					<thead style="margin-top:30px; width:100%">
+						<tr>
+							<td>No</td>
+							<td>Nama Produk</td>
+							<td>Deskripsi</td>
+							<td>Kategori Produk</td>
+							<td>Pabrikan</td>
+							<td>Aksi</td>
+						</tr>
+					</thead>
+					<tbody style="margin-top:30px; width: 100%">
+						<tr th:each="product,iterationStatus:${product}">
+							<td th:text="${iterationStatus.count}">1</td>
+							<td><a th:href="'/product/view/' + ${product.id}" th:text="${product.nama}"></a></td>
+							<td th:text="${product.deskripsi}">Deskripsi</td>
+							<td th:text="${product.kategori}">Kategori</td>
+							<td th:text="${product.pabrikan}"></td>
+							<td><a th:href="'/product/update/' + ${product.id}"> Update </a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+</body>
+</html>

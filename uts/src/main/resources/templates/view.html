@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width" />
+	<title>UTS APAP 2017</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">UTS Arsitektur dan Pemrograman Aplikasi Perusahaan</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-9">
+				<h1 th:text="'Detail Produk - ' + ${product.nama}">Detail Produk</h1>
+				<table class="table-condensed" style="margin-top: 30px; width: 70%">
+					<tbody>
+						<tr>
+							<td class="col-md-2">Nama Produk</td>
+							<td class="col-md-4" th:text="${product.nama}">Nama Produk</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Deskripsi Produk</td>
+							<td class="col-md-4" th:text="${product.deskripsi}">Deskripsi Produk</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Kategori Produk</td>
+							<td class="col-md-4" th:text="${product.kategori}">Kategori Produk</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Pabrikan</td>
+							<td class="col-md-4" th:text="${product.pabrikan}">Pabrikan
+								Alamat</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Berat</td>
+							<td class="col-md-4"
+								th:text="${product.berat}">Berat
+								RT/RW</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Harga</td>
+							<td class="col-md-4" th:text="${product.harga}">Harga</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Tahun Produksi</td>
+							<td class="col-md-4" th:text="${product.tahun_produksi}">Tahun Produksi</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Jumlah Stok Tersedia</td>
+							<td class="col-md-4" th:text="${product.jumlah_stok}">Jumlah Stok Tersedia</td>
+						</tr>
+						<tr>
+							<td class="col-md-2">Kondisi Produk</td>
+							<td class="col-md-4"
+								th:text="${product.kondisi}">Kondisi Produk</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+</body>
+</html>
+

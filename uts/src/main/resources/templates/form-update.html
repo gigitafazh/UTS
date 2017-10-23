@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width" />
+	<title>UTS APAP 2017</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">UTS Arsitektur dan Pemrograman Aplikasi Perusahaan</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-9">
+				<h1 th:text="'Ubah Detail Produk - ' + ${product.nama}">Ubah Detail Produk</h1>
+				<form class="form-group" action="/product/update/submit"  th:object="${product}"
+					method="post">
+					<table class="table-condensed" style="margin-top: 30px; width: 70%">
+						<tbody>
+							<tr>
+								<td class="col-sm-2"><label for="id">ID Produk*</label></td>
+								<td class="col-sm-4"><input class="form-control" type="hidden" name="id" th:value="${product.id}" /></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="nama">Nama Produk</label></td>
+								<td class="col-sm-4"><input class="form-control" name="nama"
+									th:value="${product.nama}" th:field="*{nama}"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="deskripsi">Deskripsi Produk</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="deskripsi" th:value="${product.deskripsi}"
+									th:field="*{deskripsi}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="kategori">Kategori</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="kategori" th:value="${product.kategori}"
+									th:field="*{kategori}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="pabrikan">Pabrikan</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="pabrikan"
+									th:value="${product.pabrikan}"
+									th:field="*{pabrikan}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="berat">Berat</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="berat"
+									th:value="${product.berat}"
+									th:field="*{berat}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="harga">Harga</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="harga"
+									th:value="${product.harga}"
+									th:field="*{harga}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="tahun_produksi">Tahun Produksi</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="tahun_produksi"
+									th:value="${product.tahun_produksi}"
+									th:field="*{tahun_produksi}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="jumlah_stok">Jumlah Stok</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="jumlah_stok"
+									th:value="${product.jumlah_stok}"
+									th:field="*{jumlah_stok}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"><label for="kondisi">Kondisi Produk</label></td>
+								<td class="col-sm-4"><input class="form-control"
+									type="text" name="kondisi"
+									th:value="${product.kondisi}"
+									th:field="*{kondisi}" required="true"></input></td>
+							</tr>
+							<tr>
+								<td class="col-sm-2"></td>
+								<td class="col-sm-4">
+									<button class="btn btn-success" type="submit" name="action"
+										value="save">Update</button> <a
+									th:href="'/product/view/' + ${product.id}"
+									class="btn btn-danger"> Batal </a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+	</div>
+</body>
+
+</html>
